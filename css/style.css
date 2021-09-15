@@ -1,0 +1,431 @@
+@font-face {
+	font-family: "GreatVibes";
+	src: url("../fonts/GreatVibes-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Inconsolata";
+	src: url("../fonts/Inconsolata.ttf") format("truetype");
+}
+
+:root {
+	--logo: rgb(247, 213, 156);
+	--bn: rgb(94, 69, 75);
+	--lb: rgb(243, 240, 215);
+	--gn: rgb(206, 229, 208);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	/* min-height: 100vh; */
+	font-family: sans-serif;
+}
+
+/* header start */
+
+header {
+	/* min-height: 100vh; */
+	position: relative;
+}
+.nav {
+	width: 100%;
+	height: 7vh;
+	background-color: rgba(0, 0, 0, 0.6);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 0 20px;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: 15;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+.nav-bar {
+	width: 38%;
+	list-style: none;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 0 20px;
+}
+.nav-logo,
+.nav-link {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+.nav-logo {
+	font-family: "GreatVibes";
+	font-size: 26px;
+	font-weight: bold;
+
+	color: var(--logo);
+}
+.nav-item {
+	padding: 15px 0;
+
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-item::before {
+	content: "";
+
+	width: 100%;
+	height: 5px;
+	background-color: rgb(209, 209, 209);
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	transform: translateX(-105%);
+	transition: all ease-in-out 0.15s;
+}
+
+.nav-item:hover::before {
+	transform: translateX(0px);
+}
+.nav-item:hover .nav-link {
+	color: #fff;
+}
+.cart {
+	overflow: visible;
+	position: relative;
+}
+.cart::before {
+	content: "";
+
+	width: 30px;
+	height: 30px;
+	background-color: rgba(209, 209, 209, 0.3);
+	border-radius: 20px;
+	transform: translateX(0);
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+}
+.cart:hover::before {
+	transform: translate(-50%, -50%) scale(1);
+}
+.cart:hover .fa-shopping-cart {
+	color: #fff;
+}
+
+.nav-link {
+	color: rgb(209, 209, 209);
+
+	font-family: "Inconsolata";
+	font-size: 16px;
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	letter-spacing: 1.5px;
+
+	padding: 15px 0;
+	position: relative;
+}
+
+.bg {
+	min-height: 90vh;
+
+	background-image: url("../img/bg4.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	background-color: rgb(223, 212, 194);
+}
+
+.wrapper {
+	width: 100%;
+	height: 90vh;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 1;
+}
+
+.title {
+	font-size: 64px;
+	color: rgb(255, 255, 255);
+}
+.title .logo {
+	font-family: "GreatVibes";
+	text-transform: capitalize;
+
+	color: var(--logo);
+}
+
+/* header end */
+
+/* menu start */
+
+.menu {
+	/* background-color: var(--lb); */
+	background-color: whitesmoke;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	font-family: "Inconsolata";
+
+	padding-bottom: 70px;
+}
+.menu-title {
+	text-transform: uppercase;
+	padding: 40px 0;
+	color: #444;
+}
+.coffee-group {
+	width: 75%;
+	margin: auto;
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.coffee {
+	width: 280px;
+	/* background-image: linear-gradient(to bottom,var(--lb),var(--logo)); */
+	/* background-color: whitesmoke; */
+	/* background-color: #444; */
+
+	padding: 20px 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	overflow: hidden;
+	border-radius: 10px;
+	margin: 10px;
+
+	/* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); */
+}
+.coffee-img {
+	width: 200px;
+}
+.btn {
+	width: 130px;
+	height: 35px;
+	background-color: var(--logo);
+
+	font-family: "Inconsolata";
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.6);
+
+	cursor: pointer;
+}
+.btn-addtocart {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, 400%);
+	transition: all ease-in-out 0.3s;
+
+	border: none;
+	border-radius: 10px;
+
+	padding: 10px 20px;
+	cursor: pointer;
+
+	z-index: 5;
+	overflow: hidden;
+}
+.btn-addtocart::before {
+	content: "";
+	width: 150%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #333;
+
+	transform: skew(20deg) translateX(-130%);
+	transition: all 0.4s ease-in-out;
+
+	z-index: -1;
+}
+.btn-addtocart:hover::before {
+	transform: skew(20deg) translateX(-10%);
+}
+.btn-addtocart:hover {
+	color: var(--logo);
+}
+.coffee:hover .btn-addtocart {
+	transform: translate(-50%, -50%);
+}
+.coffee:hover .coffee-img {
+	animation: hlotesi 0.9s infinite alternate ease-in-out;
+}
+@keyframes hlotesi {
+	0%{
+		transform: translate(0px)  rotate(0deg);
+	}
+	33%{
+		transform: translate(5px)  rotate(3deg);
+	}
+	66%{
+		transform: translate(-5px) rotate(-3deg);
+	}
+	100%{
+		transform: translate(5px) rotate(3deg);
+	}
+}
+
+/* menu end */
+
+/* quote start */
+.quote {
+	height: 50vh;
+	position: relative;
+	background-image: url("../img/q2.jpg");
+	background-size: cover;
+	background-position: center;
+
+	font-family: sans-serif;
+}
+.quote .wrapper {
+	height: 50vh;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.quote h1,
+.quote p {
+	line-height: 1.5rem;
+}
+
+/* quote end */
+
+/* blog start */
+.blog {
+	padding: 30px;
+	background-color: whitesmoke;
+}
+
+.blog-group {
+	width: 60%;
+	font-family: "Inconsolata";
+
+	margin: auto;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 50px;
+
+	padding: 10px 0;
+}
+.blog-title {
+	font-family: "Inconsolata";
+	text-align: center;
+
+	padding-bottom: 20px;
+	text-transform: uppercase;
+}
+.blg {
+	overflow: hidden;
+	position: relative;
+	/* box-shadow:  0 3px 6px rgba(0, 0, 0, 0.2); */
+	border-radius: 8px;
+	padding-bottom: 20px;
+}
+.blog-img {
+	width: 100%;
+	height: 200px;
+}
+/* .blog-img:hover{
+	transform: scale(1.1);
+} */
+
+.blg h2 {
+	padding: 20px 0;
+	text-align: center;
+}
+.blog-content {
+	padding: 0 20px;
+	padding-bottom: 30px;
+	position: relative;
+}
+.blog-content p {
+	font-size: 16px;
+	color: #444;
+	word-spacing: 0px;
+	line-height: 1.2rem;
+	text-align: center;
+}
+.btn-read {
+	text-align: center;
+	line-height: 35px;
+	border-radius: 10px;
+	overflow: hidden;
+
+	width: 100%;
+	height: 35px;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	z-index: 5;
+}
+.btn-read::before {
+	content: "";
+	width: 120%;
+	height: 35px;
+	background-color: #333;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform: skew(20deg) translateX(-110%);
+	transition: all ease-in-out 0.4s;
+
+	z-index: -1;
+}
+.btn-read:hover::before {
+	transform: skew(20deg) translateX(-10%);
+}
+.btn-read:hover {
+	color: var(--logo);
+}
+
+/* blog end */
+
+footer {
+	background-color: #333;
+	padding: 10px;
+	color: white;
+	text-align: center;
+}
