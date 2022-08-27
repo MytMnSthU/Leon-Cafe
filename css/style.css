@@ -145,7 +145,7 @@ header {
 .bg {
 	min-height: 90vh;
 
-	background-image: url("../img/bg4.jpg");
+	background-image: url("../img/bg4.jpeg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -383,7 +383,7 @@ header {
 .quote {
 	height: 50vh;
 	position: relative;
-	background-image: url("../img/q2.jpg");
+	background-image: url("../img/q2.jpeg");
 	background-size: cover;
 	background-position: center;
 
